@@ -1,0 +1,25 @@
+<% provide(:title, 'Home') %>
+<% if signed_in? %>
+  <%= render 'shared/user_info' %>
+  <table class="front">
+    <tr>
+      <td class="main">
+        <div id="addNewThing" class="round">
+          Add new thing to do!
+        </div>
+        <div id="new_thing">
+          <h1 class="todo">New Thing to do:</h1>
+          <%= render 'shared/todo_form' %>
+        </div>
+        <%= render 'shared/feed' %>
+      </td>
+    </tr>
+  </table>
+<% else %>
+  <div id="homeIntro">
+    <p>
+      A sandbox ToDo list manager using Rails 3.2.2
+    </p>
+    <%= link_to "Sign up now!", signup_path, class: "signup_button round" %>
+  </div>
+<% end %>

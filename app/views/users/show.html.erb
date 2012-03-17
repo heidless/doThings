@@ -1,0 +1,17 @@
+<% provide :title, @user.name %>
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+      <%= link_to "Manage Things to Do", root_path, class: "manage_button round" %>
+    </td>
+    <td class="sidebar round">
+      <strong>Name</strong> <%= @user.name %><br />
+      <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
+      <strong>ToDo Items</strong> <%= @user.todos.count %>
+    </td>
+  </tr>
+</table>
