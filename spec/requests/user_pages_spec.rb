@@ -47,24 +47,24 @@ describe "User pages" do
     end
   end
 
-  describe "profile page" do
-    let(:user) { FactoryGirl.create(:user) }
-    let!(:m1) { FactoryGirl.create(:todo, user: user, content: "Foo", due_date: "7/5/2012") }
-    let!(:m2) { FactoryGirl.create(:todo, user: user, content: "Bar", due_date: "7/5/2012") }
+#  describe "profile page" do
+#    let(:user) { FactoryGirl.create(:user) }
+#    let!(:m1) { FactoryGirl.create(:todo, user: user, content: "Foo", due_date: "7/5/2012") }
+#    let!(:m2) { FactoryGirl.create(:todo, user: user, content: "Bar", due_date: "7/5/2012") }
 
-    before { visit user_path(user) }
+#    before { visit user_path(user) }
 
-    it { should have_selector('h1',    text: user.name) }
-    it { should have_selector('title', text: user.name) }
+#    it { should have_selector('h1',    text: user.name) }
+#    it { should have_selector('title', text: user.name) }
 
-    describe "todos" do
-      it { should have_content(m1.content) }
-      it { should have_content(m1.title) }
-      it { should have_content(m2.content) }
-      it { should have_content(m2.title) }
-      it { should have_content(user.todos.count) }
-    end
-  end
+#    describe "todos" do
+#      it { should have_content(m1.content) }
+#      it { should have_content(m1.title) }
+#      it { should have_content(m2.content) }
+#      it { should have_content(m2.title) }
+#      it { should have_content(user.todos.count) }
+#    end
+#  end
 
   describe "signup page" do
     before { visit signup_path }
