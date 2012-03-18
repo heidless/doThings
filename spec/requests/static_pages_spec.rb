@@ -11,7 +11,7 @@ describe "Static pages" do
 
   describe "Home page" do
     before { visit root_path }
-    let(:heading)    { 'Quipper Todo' }
+    let(:heading)    { 'doThings' }
     let(:page_title) { 'Home' }
 
     it_should_behave_like "all static pages"

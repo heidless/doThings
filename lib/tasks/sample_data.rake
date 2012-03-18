@@ -23,7 +23,7 @@ namespace :db do
       title = Faker::Lorem.sentence(5)
       due_date = Date.tomorrow
       due_date = due_date + 1.month
-      users.each { |user| user.todos.create!(title: title, content: content, due_date: due_date) }
+      users.each { |user| user.todos.create!(title: title, content: content, due_date: due_date, status: 'pending') }
     end
   end
 end
